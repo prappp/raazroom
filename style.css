@@ -1,0 +1,71 @@
+/* public/assets/css/style.css */
+/* Tailored, aesthetic, mobile-first styles with animations and velvet tones */
+:root{
+  --bg:#0b0b0f;
+  --panel:#151520;
+  --accent:#b30059; /* deep velvet pink */
+  --accent-2:#6c1e4a; /* plum */
+  --text:#eaeaf5;
+  --muted:#a0a0b8;
+  --card:#171725;
+  --success:#23b26d;
+  --error:#e14d4d;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:linear-gradient(180deg,#0b0b0f,#0f0f17);color:var(--text);font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;min-height:100%}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:1100px;margin:0 auto;padding:16px}
+.site-header{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:rgba(11,11,15,.7);backdrop-filter:blur(8px);border-bottom:1px solid #ffffff10}
+.brand a{font-weight:800;font-size:20px;color:#fff;letter-spacing:.5px}
+.nav a{margin:0 8px}
+.nav .btn-in,.nav .btn-out{padding:8px 12px;border-radius:999px;background:var(--accent);color:#fff}
+.nav .btn-out{background:#444}
+.page-title{font-size:24px;margin:12px 4px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid #ffffff10;border-radius:20px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.4);transition:.3s transform}
+.card:hover{transform:translateY(-4px)}
+.card img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+.card-body{padding:12px}
+.card-body h3{margin:0 0 8px 0;font-size:18px;color:#fff}
+.btn{display:inline-block;background:var(--accent);color:white;border:none;padding:10px 14px;border-radius:12px;cursor:pointer}
+.btn.small{padding:6px 10px;border-radius:8px;font-size:12px}
+.btn.danger{background:var(--error)}
+.notice{padding:10px 12px;border-radius:12px;margin:10px 0;background:#222;border:1px solid #ffffff15}
+.notice.success{border-color:#2dd07b;color:#d9ffe9}
+.notice.error{border-color:#ff7b7b;color:#ffe1e1}
+.notice.info{border-color:#7bb1ff;color:#e2ecff}
+.form-card{background:var(--panel);border:1px solid #ffffff12;border-radius:16px;padding:16px;max-width:500px}
+label{display:block;margin:8px 0 12px 0;font-size:14px}
+input,textarea{width:100%;padding:10px;border-radius:10px;border:1px solid #ffffff1a;background:#0f0f18;color:#fff;outline:none}
+input:focus,textarea:focus{border-color:var(--accent)}
+.table{width:100%;border-collapse:collapse;background:var(--panel);border-radius:16px;overflow:hidden}
+.table th,.table td{padding:10px;border-bottom:1px solid #ffffff10;text-align:left}
+.site-footer{padding:24px;text-align:center;color:var(--muted);border-top:1px solid #ffffff10;margin-top:24px}
+.footer-links a{margin:0 8px}
+/* Curtain screen */
+.curtain-body{overflow:hidden;background:radial-gradient(1000px 600px at 50% -100px, #281321, #0b0b0f)}
+.curtain{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+.curtain-panel{position:absolute;top:0;width:50%;height:100%;background:linear-gradient(0deg, #2c0c1e, #6c1e4a);box-shadow:inset 0 0 80px rgba(0,0,0,.6)}
+.curtain-panel.left{left:0;transform-origin:left}
+.curtain-panel.right{right:0;transform-origin:right}
+.curtain-message{position:relative;z-index:2;text-align:center}
+.curtain-message h1{font-size:42px;margin:0 0 6px 0;letter-spacing:1px}
+.curtain-message p{color:#d9b3c8}
+.curtain.open .left{animation:openLeft 1.6s ease forwards}
+.curtain.open .right{animation:openRight 1.6s ease forwards}
+@keyframes openLeft{to{transform:translateX(-100%)}}
+@keyframes openRight{to{transform:translateX(100%)}}
+/* Ad interstitial */
+.ad-body{display:grid;place-items:center;min-height:100vh}
+.ad-box{background:var(--panel);border:1px solid #ffffff10;padding:18px;border-radius:16px;max-width:520px;text-align:center}
+.ad-slot{height:200px;border:2px dashed #ffffff22;border-radius:14px;display:grid;place-items:center;margin-bottom:12px}
+/* Verify */
+.verify-body{display:grid;place-items:center;min-height:100vh}
+.verify-box{background:var(--panel);border:1px solid #ffffff10;padding:18px;border-radius:16px;max-width:420px;text-align:center}
+@media (max-width:600px){
+  .brand a{font-size:18px}
+  .grid{grid-template-columns:1fr 1fr}
+  .card-body h3{font-size:16px}
+}
+
